@@ -1,0 +1,35 @@
+<h1>Listing startups</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Url</th>
+    <th>Pitch</th>
+    <th>Screenshot</th>
+    <th>Ad banner</th>
+    <th>Location img</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @startups.each do |startup| %>
+  <tr>
+    <td><%= startup.name %></td>
+    <td><%= startup.url %></td>
+    <td><%= startup.pitch %></td>
+    <td><%= startup.screenshot %></td>
+    <td><%= startup.ad_banner %></td>
+    <td><%= startup.location_img %></td>
+		<td><%= startup.get_share_link(@current_user) %></td>
+
+    <td><%= link_to 'Show', startup %></td>
+    <td><%= link_to 'Edit', edit_startup_path(startup) %></td>
+    <td><%= link_to 'Destroy', startup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Startup', new_startup_path %>

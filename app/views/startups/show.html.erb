@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @startup.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @startup.url %>
+</p>
+
+<p>
+  <b>Pitch:</b>
+  <%= @startup.pitch %>
+</p>
+
+<p>
+  <b>Screenshot:</b>
+  <%= @startup.screenshot %>
+</p>
+
+<p>
+  <b>Ad banner:</b>
+  <%= @startup.ad_banner %>
+</p>
+
+<p>
+  <b>Location img:</b>
+  <%= @startup.location_img %>
+</p>
+
+<p>
+	<h3>script</h3>
+	<h4>
+		<span class="label label-info"><%= @startup.get_script %></span>
+	</h4>
+
+</p>
+
+
+<%= link_to 'Edit', edit_startup_path(@startup) %> |
+<%= link_to 'Back', startups_path %>
