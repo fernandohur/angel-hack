@@ -1,35 +1,39 @@
-<h1>Listing startups</h1>
+<div class="container">
+	<ul class="startup-list">
+		<% @startups.each do |s| %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Url</th>
-    <th>Pitch</th>
-    <th>Screenshot</th>
-    <th>Ad banner</th>
-    <th>Location img</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+			<li>
+				<div class="thumbnail">
+				<%= link_to s do %>
+					<%= image_tag s.screenshot %>
+				<% end %>
+	      <div class="caption">
+        	<h3><%= s.name %></h3>
+          <p><%= s.pitch %></p>
+          <p>
+          	<%= render_modal_link s.id, "btn btn-primary" do %>
+      				<i class="icon-plus-sign-alt"></i> support
+      			<% end %>
+          </p>
+        </div>
+      </div>
 
-<% @startups.each do |startup| %>
-  <tr>
-    <td><%= startup.name %></td>
-    <td><%= startup.url %></td>
-    <td><%= startup.pitch %></td>
-    <td><%= startup.screenshot %></td>
-    <td><%= startup.ad_banner %></td>
-    <td><%= startup.location_img %></td>
-		<td><%= startup.get_share_link(@current_user) %></td>
 
-    <td><%= link_to 'Show', startup %></td>
-    <td><%= link_to 'Edit', edit_startup_path(startup) %></td>
-    <td><%= link_to 'Destroy', startup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
+			</li>
 
-<%= link_to 'New Startup', new_startup_path %>
+			<%= render_modal s.name, s.id do %>
+				<p> Hi! copy the following link and help us spread the word about <%= s.name %> </p>
+				<div style="text-align:center;">
+					<input style="width:90%" type="text" value="<%= s.get_share_link(@current_user) %>"></input>
+				</div>
+			<% end %>
+
+		<% end %>
+
+	</ul>
+
+
+
+
+
