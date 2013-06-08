@@ -28,7 +28,7 @@
   <div class="control-group">
     <%= f.label :pitch, :class => 'control-label', :for => 'inputPitch' %>
     <div class="controls">
-    	<%= f.text_area :pitch, :id => 'inputPitch', :rows => '5', :maxlength => '140' %>
+    	<%= f.text_area :pitch, :id => 'inputPitch', :rows => '6', :maxlength => '140' %>
     </div>
   </div>
   <div class="control-group">
