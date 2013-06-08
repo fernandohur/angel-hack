@@ -302,7 +302,7 @@
 
 // Hero unit
 // -------------------------
-@heroUnitBackground:	@linkColor;
+@heroUnitBackground:	#B1EBF5;
 @heroUnitHeadingColor:	#3B3D42;
 @heroUnitLeadColor:	#3B3D42;
 
