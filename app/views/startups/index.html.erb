@@ -29,10 +29,8 @@
 
 			<%= render_modal s.name, s.id do %>
 				<p> Hi! copy the following link and help us spread the word about <%= s.name %> </p>
-				<div style="text-align:center;">
-					<input style="width:90%" type="text"
-					value="<%= s.get_share_link(@current_user) %>"></input>
-				</div>
+				<a id="btnGetLink" class="btn btn-primary" onclick="get_short_link('<%= s.get_share_link(@current_user)%>')"> generate link </a>
+
 			<% end %>
 
 		<% end %>
@@ -50,6 +48,14 @@
     	columnWidth : 10
   	});
 	});
+	function get_short_link(url_arg){
+		$.get('/shorten',{url: url_arg})
+		.done(function(data){
+			window.prompt ("Copy to clipboard: Ctrl+C, Enter", data);
+		})
+
+	}
+
 </script>
 
 

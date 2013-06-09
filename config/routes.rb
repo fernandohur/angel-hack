@@ -7,6 +7,7 @@ Entrepromote::Application.routes.draw do
 
 	match '/show_ad' => 'startups#show_ad'
 	match '/promote' => 'views#create'
+	match '/shorten' => 'shortener#shorten'
 
 
   # The priority is based upon order of creation:
