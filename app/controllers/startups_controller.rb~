@@ -131,7 +131,7 @@ end
 		else
 
 			sponsor = Startup.find(maximoSponsor)
-			render :text => "<img src='" << sponsor.ad_banner << "' />"
+			render :text => "<img src='" << sponsor.ad.url << "' width='' height='' />"
 
 		end
   end

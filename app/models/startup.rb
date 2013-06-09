@@ -1,7 +1,17 @@
 class Startup < ActiveRecord::Base
-  attr_accessible :ad_banner, :location_img, :name, :pitch, :screenshot, :url
+  attr_accessible :ad_banner, :location_img, :name, :pitch, :screenshot, :url, :photo, :ad
 
   has_many :views
+  
+  has_attached_file :photo,
+  :styles => {
+    :thumb=> "100x100#",
+    :small  => "150x150>" }
+    
+  has_attached_file :ad,
+  :styles => {
+    :thumb=> "100x100#",
+    :small  => "150x150>" }
 
 
   # retorna
