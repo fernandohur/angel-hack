@@ -31,6 +31,25 @@
 	  	chart.draw(data, options);
 	  }
 	</script>
+	
+	<br/><br/>
+	
+	<h3>Recent tweets about <span style="color:#5B8D96"><%= @startup.name %></span> </h3>
+	
+	<div style="background-color: #5B8D96; margin-left:10%; margin-right:30%">
+	<span style="font-family:verdana; font-size:x-small">
+	<ul>
+	<% @comentarios["twitter"]["statuses"].each do |status| %>
+	
+	<li> <%= status["text"] %></li>
+	
+	<% end %>
+	</ul>
+	</span>
+	
+	</div>
+	
+	<br/>
 
 	<h4>Get the script</h4>
 	<p>Copy and paste the following script anywhere in your site. It will help promote your fellow entrepreneurs.</p>

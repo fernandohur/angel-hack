@@ -16,6 +16,8 @@ class StartupsController < ApplicationController
   # GET /startups/1.json
   def show
     @startup = Startup.find(params[:id])
+    
+    @comentarios = JSON.parse(open("http://api.oula.co/twitter/topic/?q=" << @startup.name).read)   
 
     respond_to do |format|
       format.html # show.html.erb
