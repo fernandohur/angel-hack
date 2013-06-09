@@ -17,14 +17,19 @@
 	          <p><%= s.pitch %></p>
 	          <p>
 	          	<% if session[:username] != nil %>
-			        	<%= render_modal_link s.id, "btn btn-primary" do %>
+			        	<div>
+			        		<%= render_modal_link s.id, "btn btn-primary" do %>
 			    				<i class="icon-plus-sign-alt"></i> support
 			    			<% end %>
+			    			<div style="float:right;margin-top:2px;margin-right:10px"class="fb-send" data-href="http://goo.gl/hN7OP"></div>
+			        	</div>
 			    		<% else %>
 			        	<%= link_to "auth/facebook", :class => "btn btn-primary" do %>
 			        		<i class="icon-plus-sign-alt"></i> support
 			        	<% end %>
 			    		<% end %>
+
+
 	          </p>
 	        </div>
       	</div>
@@ -36,6 +41,7 @@
 			<%= render_modal s.name, s.id do %>
 				<p> Hi! copy the following link and help us spread the word about <%= s.name %> </p>
 				<a id="btnGetLink" class="btn btn-primary" onclick="get_short_link('<%= s.get_share_link(@current_user)%>')"> generate link </a>
+
 
 			<% end %>
 

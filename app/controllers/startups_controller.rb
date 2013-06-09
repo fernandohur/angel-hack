@@ -126,12 +126,12 @@ end
 
 		end
 
-		if maximoSponsor == -1
-			render ""
+		if maximoSponsor == -1 || maximaFrecuencia < 5
+			render :text => ""
 		else
 
 			sponsor = Startup.find(maximoSponsor)
-			render :text => "<img src='" << sponsor.ad_banner << "' />"
+			render :text => "<a href='#{sponsor.url}'><img src='" << sponsor.ad_banner << "' /></a>"
 
 		end
   end
