@@ -5,15 +5,14 @@
 
 	<h1 style="margin-top:35px; margin-bottom: 35px;" class="black-transp-background">Help spread the word! <small>Get help by helping others</small></h1>
 
-	<ul class="startup-list">
+	<div id="container">
 		<% @startups.each do |s| %>
 
-			<li class="span4">
-				<div class="thumbnail">
+				<div class="item thumbnail">
 					<%= link_to s do %>
 						<%= image_tag s.screenshot %>
 					<% end %>
-		      <div class="caption">
+		      <div>
 	        	<h3><%= s.name %></h3>
 	          <p><%= s.pitch %></p>
 	          <p>
@@ -26,7 +25,7 @@
 
 
 
-			</li>
+
 
 			<%= render_modal s.name, s.id do %>
 				<p> Hi! copy the following link and help us spread the word about <%= s.name %> </p>
@@ -38,9 +37,20 @@
 
 		<% end %>
 
-	</ul>
+	</div>
 
 </div>
+
+<script src="http://masonry.desandro.com/jquery.masonry.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+  	$('#container').masonry({
+    	// options
+    	itemSelector : '.item',
+    	columnWidth : 10
+  	});
+	});
+</script>
 
 
 
