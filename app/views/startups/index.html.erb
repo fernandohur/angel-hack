@@ -16,9 +16,15 @@
 	        	<h3><%= s.name %></h3>
 	          <p><%= s.pitch %></p>
 	          <p>
-	          	<%= render_modal_link s.id, "btn btn-primary" do %>
-	      				<i class="icon-plus-sign-alt"></i> support
-	      			<% end %>
+	          	<% if session[:username] != nil %>
+			        	<%= render_modal_link s.id, "btn btn-primary" do %>
+			    				<i class="icon-plus-sign-alt"></i> support
+			    			<% end %>
+			    		<% else %>
+			        	<%= link_to "auth/facebook", :class => "btn btn-primary" do %>
+			        		<i class="icon-plus-sign-alt"></i> support
+			        	<% end %>
+			    		<% end %>
 	          </p>
 	        </div>
       	</div>
