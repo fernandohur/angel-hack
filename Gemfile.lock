@@ -43,8 +43,14 @@ GEM
       multi_json (~> 1.0)
     faraday (0.8.7)
       multipart-post (~> 1.1)
+    googl (0.6.3)
+      httparty (~> 0.10.0)
+      json (>= 1.4.6)
     hashie (2.0.5)
     hike (1.2.3)
+    httparty (0.10.2)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     httpauth (0.2.0)
     i18n (0.6.1)
     journey (1.0.4)
@@ -65,6 +71,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.6)
+    multi_xml (0.5.4)
     multipart-post (1.2.0)
     oauth2 (0.8.1)
       faraday (~> 0.8)
@@ -140,6 +147,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  googl
   jquery-rails
   less-rails
   omniauth

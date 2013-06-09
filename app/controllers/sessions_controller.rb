@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
 		
 #		render :text => auth_hash["info"]["first_name"]
 		
+		session[:brand_redirect] = "/startups"
 		
 		user = User.find_by_facebook_id(auth_hash["uid"])
 		
@@ -24,5 +25,14 @@ class SessionsController < ApplicationController
 	end
 
   def failure
+  end
+  
+  def logout
+  	session[:username] = nil
+  	session[:facebook_id] = nil
+  	session[:startup_id] = nil
+  	session[:brand_redirect] = "/"
+  	flash[:notice] = "You have been successfully logged out"
+  	redirect_to "/"
   end
 end

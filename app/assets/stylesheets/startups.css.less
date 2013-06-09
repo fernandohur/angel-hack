@@ -2,12 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "bootstrap_and_overrides.css.less";
+
 .startup-list{
 	list-style-type: none;
 }
 
 .startup-list li{
-	width: 30%;
+
 	float:left;
 	margin: 5px;
+}
+
+.startup-list .thumbnail{
+	background-color: #E5EBE6;
+}
+
+.city-background{
+	background-color: #000000;
+	background-image:url('background.jpg');
+	background-attachment:fixed;
+	background-size: 100% 100%;
+}
+
+.black-transp-background{
+	padding: 10px;
+	color: #E5EBE6;
+	border-radius: 10px;
+	background-color:rgba(0,0,0,0.7);
+	margin-bottom: 20px;
+	text-align: center;
 }

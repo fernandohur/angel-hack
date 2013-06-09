@@ -1,13 +1,10 @@
 Entrepromote::Application.routes.draw do
 
-  get "sessions/new"
-
-  get "sessions/create"
-
-  get "sessions/failure"
+ 	root :to => 'home#index'
 
   resources :views
 	resources :startups
+	resources :sessions
 
 	match '/show_ad' => 'startups#show_ad'
 	match '/promote' => 'views#create'

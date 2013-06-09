@@ -17,5 +17,4 @@ class ApplicationController < ActionController::Base
   	return session[:startup_id]
   end
   
-
 end

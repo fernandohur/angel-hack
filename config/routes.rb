@@ -1,10 +1,14 @@
 Entrepromote::Application.routes.draw do
 
+ 	root :to => 'home#index'
+
   resources :views
 	resources :startups
+	resources :sessions
 
 	match '/show_ad' => 'startups#show_ad'
 	match '/promote' => 'views#create'
+	match '/logout' => 'sessions#logout'
 	
 	
   # omniAuth

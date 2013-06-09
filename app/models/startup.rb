@@ -11,7 +11,26 @@ class Startup < ActiveRecord::Base
   end
 
   def get_share_link(sponsor)
-  	return "http://0.0.0.0:3000/promote?sponsor=#{sponsor}&startup=#{self.id}"
+  	url = "http://0.0.0.0:3000/promote?sponsor=#{sponsor}&startup=#{self.id}"
+  	#shot_url = Googl.shorten(url)
+  	#return shot_url.short_url
+  	return url
+  end
+
+  def get_frecuency_hash
+  	frequencies = {}
+
+		views.each do |view|
+
+			sponsor_id = view.sponsor_id
+			if frequencies[sponsor_id] == nil
+				frequencies[sponsor_id] = 1
+			else
+				frequencies[sponsor_id] += 1
+			end
+
+		end
+		return frequencies
   end
 
 end
