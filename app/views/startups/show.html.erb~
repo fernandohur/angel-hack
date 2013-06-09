@@ -1,10 +1,9 @@
-<%= render_header(@startup.name,'help us spread the word', "icon-comments") %>
 <p id="notice"><%= notice %></p>
 
 <div class="container">
 
-	<h3>Welcome back to <%= link_to @startup.name, @startup %>'s administration page </h3>
-	<p>You have <%= @startup.views.size %> page views </p>
+	<h3><span style="color:#5B8D96"><%= @startup.name %></span> stats</h3>
+	<p>Total page views: <%= @startup.views.size %></p>
 
 	<div id="chart_div" style="width: 900px; height: 500px;margin-left:auto;margin-right: auto;border-radius: 20px"></div>
 
@@ -14,13 +13,14 @@
 		google.load("visualization", "1", {packages:["corechart"]});
 		google.setOnLoadCallback(drawChart);
 	  function drawChart() {
-	  var data = google.visualization.arrayToDataTable([
-	          ['Sales', 'Contribuions'],
+	  /*var data = google.visualization.arrayToDataTable([
+	          ['Sales', 'Contributions'] ,
 	          ['Taxigol', 400],
 	          ['Google', 460],
 	          ['Facebook', 1120],
 	          ['WakeUp!', 540]
-	        ]);
+	        ]);*/
+			var data = google.visualization.arrayToDataTable(<%= hash_to_graph(@startup.get_frecuency_hash).html_safe %>);
 
 	  	var options = {
 	  		title: 'Your ',
@@ -31,10 +31,31 @@
 	  	chart.draw(data, options);
 	  }
 	</script>
+	
+	<br/><br/>
+	
+	<h3>Recent tweets about <span style="color:#5B8D96"><%= @startup.name %></span> </h3>
+	
+	<div style="background-color: #5B8D96; margin-left:100px; margin-right:300px">
+	<span style="font-family:verdana; font-size:x-small">
+	<ul>
+	<% @comentarios["twitter"]["statuses"].each do |status| %>
+	
+	<li> <%= status["text"] %></li>
+	
+	<% end %>
+	</ul>
+	</span>
+	
+	</div>
+	
+	<br/>
 
 	<h4>Get the script</h4>
-	<p>Copy and paste the following script anywhere in your site. It will help promote your fellow entrepreneurs</p>
+	<p>Copy and paste the following script anywhere in your site. It will help promote your fellow entrepreneurs.</p>
 	<code> <%= @startup.get_script %></code>
+	<br>
+	<br>
 
 
 </div>

@@ -33,7 +33,7 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class=""><a href="/startups"><i class="icon-plus-sign-alt"></i>Support</a></li>
-              <% if session[:username] != nil %>
+              <% if session[:facebook_id] != nil %>
               <li class="">
               	<%= link_to "/startups/" << session[:startup_id].to_s do %>
               		<i class='icon-user'></i><%= session[:username] %>

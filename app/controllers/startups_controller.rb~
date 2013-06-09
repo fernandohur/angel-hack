@@ -17,7 +17,15 @@ class StartupsController < ApplicationController
   def show
     @startup = Startup.find(params[:id])
     
-    @comentarios = JSON.parse(open("http://api.oula.co/twitter/topic/?q=" << @startup.name).read)   
+    @comentarios = JSON.parse(open("http://api.oula.co/twitter/topic/?q=" << @startup.name).read)
+    
+    
+    
+    	
+    
+    end
+    
+    
 
     respond_to do |format|
       format.html # show.html.erb
@@ -128,12 +136,12 @@ end
 
 		end
 
-		if maximoSponsor == -1 || maximaFrecuencia < 5
-			render :text => ""
+		if maximoSponsor == -1
+			render ""
 		else
 
 			sponsor = Startup.find(maximoSponsor)
-			render :text => "<a href='#{sponsor.url}'><img src='" << sponsor.ad.url << "' width='200px' height='50px' /></a>"
+			render :text => "<img src='" << sponsor.ad.url << "' width='200px' height='50px' />"
 
 		end
   end

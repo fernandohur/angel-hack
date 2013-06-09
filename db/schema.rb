@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130609071255) do
+ActiveRecord::Schema.define(:version => 20130609123156) do
+
+  create_table "data_files", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "startups", :force => true do |t|
     t.string   "name"
@@ -20,8 +25,17 @@ ActiveRecord::Schema.define(:version => 20130609071255) do
     t.string   "screenshot"
     t.string   "ad_banner"
     t.string   "location_img"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.string   "ad_file_name"
+    t.string   "ad_content_type"
+    t.integer  "ad_file_size"
   end
 
   create_table "users", :force => true do |t|
