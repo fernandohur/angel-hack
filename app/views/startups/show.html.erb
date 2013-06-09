@@ -1,37 +1,40 @@
-<p id="notice"><%= notice %></p>
 <%= render_header(@startup.name,'help us spread the word', "icon-comments") %>
+<p id="notice"><%= notice %></p>
 
 <div class="container">
 
 	<h3>Welcome back to <%= link_to @startup.name, @startup %>'s administration page </h3>
 	<p>You have <%= @startup.views.size %> page views </p>
 
-
-	<div id="chart_div" style="width: 900px; height: 500px;margin-left:auto;margin-right: auto;"></div>
+	<div id="chart_div" style="width: 900px; height: 500px;margin-left:auto;margin-right: auto;border-radius: 20px"></div>
 
 
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-	    <script type="text/javascript">
-	      google.load("visualization", "1", {packages:["corechart"]});
-	      google.setOnLoadCallback(drawChart);
-	      function drawChart() {
-	        var data = google.visualization.arrayToDataTable([
-	          ['Sales', 'Expenses'],
-	          ['1000',      400],
-	          [1170,      460],
-	          [660,       1120],
-	          [1030,      540]
+	<script type="text/javascript">
+		google.load("visualization", "1", {packages:["corechart"]});
+		google.setOnLoadCallback(drawChart);
+	  function drawChart() {
+	  var data = google.visualization.arrayToDataTable([
+	          ['Sales', 'Contribuions'],
+	          ['Taxigol', 400],
+	          ['Google', 460],
+	          ['Facebook', 1120],
+	          ['WakeUp!', 540]
 	        ]);
 
-	        var options = {
-	          title: 'Company Performance',
-	          hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
-	        };
+	  	var options = {
+	  		title: 'Your ',
+	  		hAxis: {title: 'Contributions', titleTextStyle: {color: 'red'}}
+	  	};
 
-	        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-	        chart.draw(data, options);
-	      }
-	    </script>
+    	var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+	  	chart.draw(data, options);
+	  }
+	</script>
+
+	<h4>Get the script</h4>
+	<p>Copy and paste the following script anywhere in your site. It will help promote your fellow entrepreneurs</p>
+	<code> <%= @startup.get_script %></code>
 
 
 </div>

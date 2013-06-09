@@ -10,3 +10,4 @@ Próxima iteración
 
 1. Bitly para los links
 2. subir imágenes del disco al registrar startup
+3. En el principal hacer que el fondo de los startups sea más visible
