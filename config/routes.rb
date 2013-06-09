@@ -16,6 +16,10 @@ Entrepromote::Application.routes.draw do
   	get   '/login', :to => 'sessions#new', :as => :login
 	match '/auth/:provider/callback', :to => 'sessions#create'
 	match '/auth/failure', :to => 'sessions#failure'
+	
+	
+	match '/shorten' => 'shortener#shorten'
+
 
 
   # The priority is based upon order of creation:
