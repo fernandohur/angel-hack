@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
 		
 #		render :text => auth_hash["info"]["first_name"]
 		
+		session[:brand_redirect] = "/startups"
 		
 		user = User.find_by_facebook_id(auth_hash["uid"])
 		

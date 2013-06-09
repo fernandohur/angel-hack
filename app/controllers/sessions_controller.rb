@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 		
 		user = User.find_by_facebook_id(auth_hash["uid"])
 		
-		if user != nil
+		if user != nil && user.startup_id != 0
 			set_logged_in_user(user.startup_id)
 			redirect_to(:action => "index", :controller => "startups")
 		else

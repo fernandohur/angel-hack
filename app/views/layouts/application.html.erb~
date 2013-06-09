@@ -3,6 +3,7 @@
 <head>
   <title>Entrepromote</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "http://masonry.desandro.com/jquery.masonry.min.js" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -21,7 +22,7 @@
           <% end %>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class=""><a href="/startups"><i class="icon-rocket"></i>Home</a></li>
+              <li class=""><a href="/startups"><i class="icon-plus-sign-alt"></i>Support</a></li>
               <% if session[:username] != nil %>
               <li class="">
               	<%= link_to "/startups/" << session[:startup_id].to_s do %>
