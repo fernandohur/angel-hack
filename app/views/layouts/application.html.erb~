@@ -22,7 +22,7 @@
               <li class=""><a href="/startups"><i class="icon-home"></i>Home</a></li>
               <li class="">
               	<%= link_to "/startups/" << session[:startup_id].to_s do %>
-              		<i class='icon-user'></i><%= session[:username] %>
+              		<i class='icon-user'></i> <%= session[:username] %>
               	<% end %>
               </li>
             </ul>

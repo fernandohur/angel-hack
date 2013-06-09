@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   def set_logged_in_user(startup_id)
   	session[:startup_id] = startup_id
   	user = User.find_by_startup_id(startup_id)
-  	session[:facebook_id] = user.facebook_id
+  	session[:fb_id] = user.facebook_id
   	session[:username] = user.name
   end
 

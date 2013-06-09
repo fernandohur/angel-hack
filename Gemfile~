@@ -41,4 +41,3 @@ gem 'jquery-rails'
 
 # omniauth
 gem 'omniauth'
-gem 'omniauth-facebook'

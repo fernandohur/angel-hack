@@ -4,7 +4,7 @@ class StartupsController < ApplicationController
   def index
     @startups = Startup.all
 
-    @current_user = session[:startup_id]
+    @current_user = 3
 
     respond_to do |format|
       format.html # index.html.erb
