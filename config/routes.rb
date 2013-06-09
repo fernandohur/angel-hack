@@ -1,5 +1,7 @@
 Entrepromote::Application.routes.draw do
 
+ 	root :to => 'home#index'
+
   resources :views
 	resources :startups
 

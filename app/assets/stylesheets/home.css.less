@@ -1,0 +1,49 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap_and_overrides.css.less";
+
+#home{
+	background-color: #000000;
+	background-image:url('background.jpg');
+	background-attachment:fixed;
+	background-size: 100% 100%;
+
+	h1{
+		color: @white;
+		text-shadow: 2px 2px #000000;
+		font-family: 'Open Sans';
+		font-weight:normal;
+	}
+	.feature{
+		padding: 10px;
+		color: @white;
+		border-radius: 10px;
+		background-color:rgba(0,0,0,0.7);
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+}
+
+#entrepromote{
+	color: lighten(@linkColor,30%);
+}
+
+.home-hero{
+	.hero-unit;
+	h1{
+		text-shadow: 2px 2px @linkColor;
+		color: @white;
+	}
+	p{
+		font-size: 30px;
+		color: @white;
+		margin-top: 10px;
+		text-shadow: 0 0 15px #000000;
+
+	}
+	background-color:rgba(0,0,0,0);
+}
+

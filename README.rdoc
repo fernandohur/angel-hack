@@ -1,13 +1,15 @@
 TODO
-1. Arreglar los márgenes de la página principal (fer)
-2. El brand lo manda al login o si ya está logeado lo manda al principal (fer)
+1. Arreglar los márgenes de la página principal (fer) [X]
+2. El brand lo manda al login o si ya está logeado lo manda al principal (fer) []
 3. Login logica (emi)
-4. Login interfaz (fer)
-5. Lógica de las gráficas (fer)
+4. Login interfaz (fer) [X]
+5. Lógica de las gráficas (fer) [X]
 6. Cambiar los nombresitos del registrar startup (emi)
 
 Próxima iteración
 
-1. Bitly para los links
+1. Bitly para los links [X]
 2. subir imágenes del disco al registrar startup
 3. En el principal hacer que el fondo de los startups sea más visible
+4. Cuadrar imágenes en el principal
+5. Mover los Goo.gl a un controlador separador y acceso con $.get(...)
