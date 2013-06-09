@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130609005334) do
+ActiveRecord::Schema.define(:version => 20130609071255) do
 
   create_table "startups", :force => true do |t|
     t.string   "name"
@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(:version => 20130609005334) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "facebook_id"
+    t.integer  "facebook_id", :limit => 8
     t.string   "name"
     t.integer  "startup_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   create_table "views", :force => true do |t|
